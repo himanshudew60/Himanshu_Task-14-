@@ -1,23 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAVA SCRIPT TASK 13</title>
+    <title>JAVA SCRIPT TASK 14</title>
 </head>
+
 <body>
- <h1>ODD EVEN PROGRAM USING if else</h1>
+    <h1>PROGRAM</h1>
+
     <script>
-        let num = 90;
 
-        if(num%2==0){
-            console.log("Number ",num," is Even");
-            
-        }else{
-                        console.log("Number ",num," is Odd");
+        // sum of first n number
+        let n = 153;
+        let sum = 0;
 
+        for (let i = 1; i <= n; i++) {
+            sum = sum + i;
+        }
+
+        console.log("//// sum of first", n, "number is:", sum, "////");
+
+
+        // table of n
+        console.log(`//// table of ${n} ////`);
+
+        for (let i = 1; i <= 10; i++) {
+            console.log(`${n} * ${i} = ${n * i}`);
+        }
+
+
+        // check n prime or not
+        let isPrime = true;
+
+        if (n <= 1) {
+            isPrime = false;
+        }
+
+        for (let i = 2; i < n; i++) {
+
+            if (n % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            console.log("////", n, "is a prime number ////");
+        } else {
+            console.log("////", n, "is not a prime number ////");
+        }
+
+
+        // factors of n
+        console.log("//// factors of", n, "////");
+
+        for (let i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                console.log(i);
+            }
+        }
+
+
+        // sum of digits
+        console.log("//// sum of digits of", n, "////");
+
+        let digitssum = 0;
+        let temp = n;
+
+        while (temp > 0) {
+            let digit = temp % 10;
+            digitssum = digitssum + digit;
+            temp = Math.floor(temp / 10);
+        }
+
+        console.log(digitssum);
+
+
+        // Armstrong number
+        console.log("//// Armstrong number check for", n, "////");
+
+        let original = n;
+        let armstrongSum = 0;
+        let digits = n.toString().length;
+        temp = n;
+
+        while (temp > 0) {
+            let digit = temp % 10;
+            armstrongSum = armstrongSum + digit ** digits;
+            temp = Math.floor(temp / 10);
+        }
+
+        if (armstrongSum === original) {
+            console.log(n, "is an Armstrong number");
+        } else {
+            console.log(n, "is not an Armstrong number");
         }
 
     </script>
 </body>
+
 </html>
