@@ -4,100 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAVA SCRIPT TASK 14</title>
+    <title>JAVA SCRIPT TASK 15</title>
 </head>
 
 <body>
-    <h1>PROGRAM</h1>
+    <h1>Array and Function</h1>
 
-    <script>
-
-        // sum of first n number
-        let n = 153;
-        let sum = 0;
-
-        for (let i = 1; i <= n; i++) {
-            sum = sum + i;
-        }
-
-        console.log("//// sum of first", n, "number is:", sum, "////");
-
-
-        // table of n
-        console.log(`//// table of ${n} ////`);
-
-        for (let i = 1; i <= 10; i++) {
-            console.log(`${n} * ${i} = ${n * i}`);
-        }
-
-
-        // check n prime or not
-        let isPrime = true;
-
-        if (n <= 1) {
-            isPrime = false;
-        }
-
-        for (let i = 2; i < n; i++) {
-
-            if (n % i === 0) {
-                isPrime = false;
-                break;
+    <script>    
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        function maxNumber(arr){
+            let max = arr[0];
+            for(let i = 1; i < arr.length; i++){
+                if(arr[i] > max){
+                    max = arr[i];
+                }
             }
+            console.log("Maximum Number in Array is : " + max);
         }
+        maxNumber(arr);
 
-        if (isPrime) {
-            console.log("////", n, "is a prime number ////");
-        } else {
-            console.log("////", n, "is not a prime number ////");
-        }
-
-
-        // factors of n
-        console.log("//// factors of", n, "////");
-
-        for (let i = 1; i <= n; i++) {
-            if (n % i == 0) {
-                console.log(i);
+        function sumOfElements(arr){
+            let sum =0;
+            for(let i = 0; i < arr.length; i++){
+                sum += arr[i];
             }
+            console.log("Sum of all elements in array is : " + sum);
         }
+        sumOfElements(arr);
 
-
-        // sum of digits
-        console.log("//// sum of digits of", n, "////");
-
-        let digitssum = 0;
-        let temp = n;
-
-        while (temp > 0) {
-            let digit = temp % 10;
-            digitssum = digitssum + digit;
-            temp = Math.floor(temp / 10);
+        function oddNumberinArray(arr){
+            let odd = 0;
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] % 2 !== 0){
+                    odd++;
+                }
+            }
+            console.log("Total Odd Numbers in Array is : "+ odd);
+            
         }
+        oddNumberinArray(arr);
 
-        console.log(digitssum);
-
-
-        // Armstrong number
-        console.log("//// Armstrong number check for", n, "////");
-
-        let original = n;
-        let armstrongSum = 0;
-        let digits = n.toString().length;
-        temp = n;
-
-        while (temp > 0) {
-            let digit = temp % 10;
-            armstrongSum = armstrongSum + digit ** digits;
-            temp = Math.floor(temp / 10);
-        }
-
-        if (armstrongSum === original) {
-            console.log(n, "is an Armstrong number");
-        } else {
-            console.log(n, "is not an Armstrong number");
-        }
-
+        
     </script>
 </body>
 
