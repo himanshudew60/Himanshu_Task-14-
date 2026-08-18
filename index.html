@@ -4,48 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAVA SCRIPT TASK 15</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Map & Filters</title>
 </head>
 
 <body>
-    <h1>Array and Function</h1>
 
-    <script>    
-        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        function maxNumber(arr){
-            let max = arr[0];
-            for(let i = 1; i < arr.length; i++){
-                if(arr[i] > max){
-                    max = arr[i];
-                }
-            }
-            console.log("Maximum Number in Array is : " + max);
-        }
-        maxNumber(arr);
+    <div class="container">
 
-        function sumOfElements(arr){
-            let sum =0;
-            for(let i = 0; i < arr.length; i++){
-                sum += arr[i];
-            }
-            console.log("Sum of all elements in array is : " + sum);
-        }
-        sumOfElements(arr);
+        <div class="header">
+            <h3>Hi, Username</h3>
+            <button>Login</button>
+        </div>
 
-        function oddNumberinArray(arr){
-            let odd = 0;
-            for(let i = 0; i < arr.length; i++){
-                if(arr[i] % 2 !== 0){
-                    odd++;
-                }
-            }
-            console.log("Total Odd Numbers in Array is : "+ odd);
-            
-        }
-        oddNumberinArray(arr);
+        <div class="search-section">
 
-        
-    </script>
+            <div class="search-box">
+                <input type="text" placeholder="Search Students">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <button class="search-btn">Search</button>
+
+        </div>
+
+        <div id="data-section" class="data-section"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
