@@ -1,71 +1,307 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.container {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(230, 230, 230);
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f5f7;
+            color: #333;
+        }
 
+        .navbar {
+            height: 55px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 55px;
+            border-bottom: 1px solid #eee;
+        }
 
-#greetbox {
-    width: 100%;
-    height: 100px;
-    border: 1px solid black;
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+        }
 
-    margin-bottom: 50px;
-}
+        .nav-menu a {
+            text-decoration: none;
+            color: #555;
+            font-size: 12px;
+        }
 
-#greetbox span {
-    font-size: 30px;
-    color: black;
-}
+        .nav-menu a:hover {
+            color: #5865f2;
+        }
 
+        .user-section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-.color-boxes {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 40px;
-}
+        .username {
+            background: #e8f7ff;
+            color: #3498db;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+        }
 
+        .logout-btn {
+            border: none;
+            background: #ff6b81;
+            color: white;
+            width: 30px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 12px;
+        }
 
-.color-boxes button {
-    width: 100px;
-    height: 100px;
+        .logout-btn:hover {
+            background: #ff4757;
+        }
 
-    border: 1px solid black;
+        .main-container {
+            width: 90%;
+            max-width: 900px;
+            margin: 35px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        }
 
-    font-size: 18px;
-}
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
 
+        .section-description {
+            font-size: 10px;
+            color: #777;
+            margin-bottom: 15px;
+        }
 
-.input-section {
-    display: flex;
-    gap: 10px;
-}
+        .added-items {
+            min-height: 135px;
+        }
 
-#inputname {
-    width: 250px;
-    padding: 10px;
-    font-size: 16px;
-}
+        .table-container {
+            width: 100%;
+        }
 
-#button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9px;
+        }
+
+        th {
+            background: #fafafa;
+            text-align: left;
+            padding: 7px;
+        }
+
+        td {
+            padding: 7px;
+            border-top: 1px solid #eee;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #999;
+            padding: 15px 0;
+            font-size: 10px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 12px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .book-card {
+            margin-top: 10px;
+        }
+
+        .book-title {
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 8px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 8px;
+            margin-bottom: 4px;
+        }
+
+        .input-group input {
+            width: 100%;
+            height: 28px;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            padding: 0 9px;
+            outline: none;
+            font-size: 9px;
+        }
+
+        .input-group input:focus {
+            border-color: #5865f2;
+        }
+
+        .book-button {
+            width: 100%;
+            height: 30px;
+            border: none;
+            background: #5965f2;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 10px;
+            margin-top: 3px;
+        }
+
+        .book-button:hover {
+            background: #4652df;
+        }
+
+        .thank-you {
+            display: none;
+            text-align: center;
+            margin-top: 8px;
+            font-size: 10px;
+            color: #20a464;
+            font-weight: bold;
+        }
+
+        .service-card {
+            min-height: 320px;
+        }
+
+        .service-image-container {
+            width: 100%;
+            height: 145px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+
+        .service-image {
+            width: 90%;
+            height: 145px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .service-name-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .service-name {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .service-price {
+            font-size: 13px;
+            font-weight: bold;
+            color: #5865f2;
+        }
+
+        .service-description {
+            font-size: 9px;
+            color: #777;
+            line-height: 1.4;
+            min-height: 27px;
+        }
+
+        .service-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .skip-btn,
+        .add-btn {
+            height: 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 9px;
+            cursor: pointer;
+        }
+
+        .skip-btn {
+            background: #ffe8ec;
+            color: #ff4d68;
+        }
+
+        .skip-btn:hover {
+            background: #ffd7df;
+        }
+
+        .add-btn {
+            background: #e4f6e9;
+            color: #28a745;
+        }
+
+        .add-btn:hover {
+            background: #d2f0da;
+        }
+
+        .service-counter {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 9px;
+            color: #888;
+        }
+
+        .remove-btn {
+            border: none;
+            background: none;
+            color: #ff4757;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .main-container {
+                width: 92%;
+                grid-template-columns: 1fr;
+            }
+        }
