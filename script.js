@@ -1,19 +1,26 @@
-function division(num1,num2){
-    const promise = new Promise((resolve,reject)=>{
-        if(num2==0){
-            reject("Cannot divide by zero");
-        }
-        else{
-            resolve(num1/num2);
-        }
+let greetName = document.getElementById("greetName");
+let inputName = document.getElementById("inputname");
+let button = document.getElementById("button");
+let redbox = document.getElementById("red");
+let bluebox = document.getElementById("blue");
+let greenbox = document.getElementById("green");
+let yellowbox = document.getElementById("yellow");
 
-    });
-    return promise;
-}
 
-division(10,2)
-.then((result)=>{
-   console.log("Successfully Divided Result is :",result);
-}).catch((error)=>{
-    console.log(error);
+button.addEventListener("click", ()=>{
+    let name = inputName.value;
+    greetName.innerText = name;
 });
+
+redbox.addEventListener("click", ()=>{
+    redbox.style.backgroundColor = "red";
+});
+bluebox.addEventListener("click", ()=>{
+    bluebox.style.backgroundColor = "blue";
+});
+greenbox.addEventListener("click", ()=>{
+    greenbox.style.backgroundColor = "green";
+});
+yellowbox.addEventListener("click", ()=>{
+    yellowbox.style.backgroundColor = "yellow";
+}); 
