@@ -1,187 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Laundry Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Service Booking Web App</title>
 </head>
-
 <body>
-
-    <nav class="navbar">
-
-        <div class="logo">
-            Logo
+    <div class="header">
+        <h2>Logo</h2>
+        <ul>
+            <li>Home</li>
+            <li>Services</li>
+            <li>Contact Us</li>
+            <li>About Us</li>
+        </ul>
+        <div class="btn">
+            <span>Username</span>
+            <button><i class="fa-solid fa-right-from-bracket"></i></button>
         </div>
-
-        <div class="nav-menu">
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Contact Us</a>
-            <a href="#">About Us</a>
-        </div>
-
-        <div class="user-section">
-            <span class="username">Himanshu</span>
-
-            <button class="logout-btn" onclick="logout()">
-                ↪
-            </button>
-        </div>
-
-    </nav>
-
-    <main class="main-container">
-
-        <div class="left-section">
-
-            <div class="card added-items">
-
-                <h3 class="section-title">
-                    Added Items
-                </h3>
-
-                <div class="table-container">
-
-                    <table>
-
-                        <thead>
-                            <tr>
-                                <th>S.No</th>
-                                <th>Service Name</th>
-                                <th>Price</th>
-                                
-                            </tr>
-                        </thead>
-
-                        <tbody id="cartItems">
-                            <tr>
-                                <td colspan="3" class="empty-message">
-                                    No items added
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table>
+    </div>
+    <div class="container">
+        <div class="left-box">
+            <div class="add-item">
+                <div class="add-item-head">
+                    <h3>Add Item</h3>
 
                 </div>
-
-                <div class="total-row">
-                    <span>Total Amount</span>
-                    <span id="totalAmount">₹0.00</span>
+                <div class="add-item-body">
+                    <div class="list-head">
+                        
+                            <div>S.No</div>
+                            <div>Service Name</div>
+                       
+                        <div class="col-2">Price</div>
+                    </div>
+                    <div id="rows" class="list-body">
+                       
+                    </div>
                 </div>
-
-            </div>
-
-            <div class="card book-card">
-
-                <h3 class="book-title">
-                    Book Now
-                </h3>
-
-                <form id="bookingForm">
-
-                    <div class="input-group">
-                        <label>Full Name</label>
-                        <input
-                            type="text"
-                            id="fullName"
-                            placeholder="Enter your name"
-                            required
-                        >
-                    </div>
-
-                    <div class="input-group">
-                        <label>Email ID</label>
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="Enter your email"
-                            required
-                        >
-                    </div>
-
-                    <div class="input-group">
-                        <label>Phone Number</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            placeholder="Enter phone number"
-                            required
-                        >
-                    </div>
-
-                    <button type="submit" class="book-button">
-                        Book Now
-                    </button>
-
-                </form>
-
-                <div class="thank-you" id="thankYouMessage">
-                    Thank you for contacting us!
+                <div class="add-item-footer">
+                    <span class="total-amount-label">Total Amount</span>
+                    <span class="total-amount"><i class="fa-solid fa-indian-rupee-sign"></i><span id="total-amount">00</span></span>
                 </div>
-
             </div>
-
+            <div class="book-now">
+                <div class="book-now-head">
+                    <h4>Book Now</h4>
+                </div>
+                <div class="book-now-body">
+                    <div class="name-field">
+                        <label for="">Full Name</label>
+                        <input id="name" type="text" >
+                    </div>
+                    <div class="email-password">
+                        <div class="email">
+                            <label for="" >Email ID</label>
+                            <input id="email" type="text">
+                        </div>
+                        <div  class="password">
+                            <label for="">Password</label>
+                            <input id="password" type="text">
+                        </div>
+                    </div>
+                    <button class="book-now-btn" id="book-now">Book Now</button>
+                    <div id="book-now-footer">
+                       
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="card service-card">
-
-            <h3 class="section-title">
-                Browse Our Services
-            </h3>
-
-            <p class="section-description">
-                Click the add button to add the services to your cart or press skip.
-            </p>
-
-            <div class="service-image-container">
-                <img
-                    id="serviceImage"
-                    class="service-image"
-                    src=""
-                    alt="Service"
-                >
+        <div class="right-box">
+            <div class="r-box-head">
+                <h3>Browse Our Services</h3>
+                <p>Click on the add to cart button to add the service to your cart or press the skip</p>
             </div>
-
-            <div class="service-name-row">
-
-                <h3 id="serviceName" class="service-name">
-                    Wash And Fold
-                </h3>
-
-                <span id="servicePrice" class="service-price">
-                    ₹140.00
-                </span>
-
+            <hr>
+            <div class="r-box-body">
+                <img id="service-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSal0IbnRyf02gfzQuq9S6zZpJJY2rJlZQxIVacHdHt6Q&s=10" alt="">
+                <div class="name-price">
+                    <span class="service-name" id="service-name">Dry Cleaning</span>
+                    <span class="service-price"><i class="fa-solid fa-indian-rupee-sign"></i><span id="service-price">200</span></span>
+                </div>
+                <div class="skip-add-btn">
+                    <button class="skip-btn" id="skip-btn">Skip <i class="fa-solid fa-circle-minus"></i></button>
+                    <button class="add-btn" id="add-btn">Add to Cart <i class="fa-solid fa-circle-plus"></i></button>
+                </div>
             </div>
-
-            <p id="serviceDescription" class="service-description">
-                Professional washing and folding service.
-            </p>
-
-            <div class="service-buttons">
-
-                <button class="skip-btn" onclick="skipService()">
-                    Skip Item ⊘
-                </button>
-
-                <button class="add-btn" onclick="addItem()">
-                    Add Item ⊕
-                </button>
-
+            <hr>
+            <div class="r-box-footer">
+                <i class="fa-solid fa-circle-info"></i>add the items to the cart and book now
             </div>
-
-           
-
         </div>
-
-    </main>
-
+    </div>
     <script src="script.js"></script>
-
 </body>
-
 </html>

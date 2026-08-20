@@ -1,138 +1,125 @@
- const services = [
-            {
-                name: "Wash And Fold",
-                description: "Professional washing and folding service.",
-                price: 140,
-                image: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=700&q=80"
-            },
-            {
-                name: "Dry Cleaning",
-                description: "Premium dry cleaning for your clothes.",
-                price: 200,
-                image: "https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?auto=format&fit=crop&w=700&q=80"
-            },
-            {
-                name: "Ironing",
-                description: "Professional ironing service for wrinkle-free clothes.",
-                price: 80,
-                image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=700&q=80"
-            },
-            {
-                name: "Wash And Iron",
-                description: "Complete washing and ironing service.",
-                price: 180,
-                image: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=700&q=80"
-            },
-            {
-                name: "Blanket Cleaning",
-                description: "Deep cleaning service for blankets and large clothes.",
-                price: 300,
-                image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=700&q=80"
-            }
-        ];
+serviceList = [
+    {
+        id: 1,
+        name: "Dry Cleaning",
+        price: 200,
+        image: "https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=500"
+    },
+    {
+        id: 2,
+        name: "Washing Machine Service",
+        price: 500,
+        image: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=500"
+    },
+    {
+        id: 3,
+        name: "Laundry Service",
+        price: 150,
+        image: "https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=500"
+    },
+    {
+        id: 4,
+        name: "Dishwasher Cleaning",
+        price: 350,
+        image: "https://images.unsplash.com/photo-1626806787928-6b3e2b4f2a6c?w=500"
+    },
+    {
+        id: 5,
+        name: "Ironing Service",
+        price: 100,
+        image: "https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=500"
+    },
+    {
+        id: 6,
+        name: "Carpet Cleaning",
+        price: 600,
+        image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500"
+    },
+    {
+        id: 7,
+        name: "Sofa Cleaning",
+        price: 800,
+        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500"
+    },
+    {
+        id: 8,
+        name: "Curtain Cleaning",
+        price: 400,
+        image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500"
+    },
+    {
+        id: 9,
+        name: "Home Deep Cleaning",
+        price: 1200,
+        image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500"
+    },
+    {
+        id: 10,
+        name: "Mattress Cleaning",
+        price: 700,
+        image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=500"
+    }
+];
+let cartItem  =[];
+let currentItem = 0;
+let total = 0;
+let rows = document.getElementById("rows");
+let image = document.getElementById("service-image");
+let name = document.getElementById("service-name");
+let price = document.getElementById("service-price");
+let skipBtn = document.getElementById("skip-btn");
+let addBtn = document.getElementById("add-btn");
+let totalAmount = document.getElementById("total-amount");
+let bookNow = document.getElementById("book-now");
+let bookNowFooter = document.getElementById("book-now-footer");
+skipBtn.addEventListener("click", () => {
+    showCurrentItem(currentItem+1);
+    currentItem++;
+});
 
-        let currentService = 0;
-        let cart = [];
+addBtn.addEventListener("click", () => {
+   showCurrentItem(currentItem);
+    cartItem.push(serviceList[currentItem]);
+    rows.innerHTML = "";
+ 
+    for (let i = 0; i < cartItem.length; i++) {
+        total += cartItem[i].price;
+        rows.innerHTML += `
+         <div id="list-body">
+                           <div class="col-1">${i+1}</div>
+                           <div class="col-2">${cartItem[i].name}</div>
+                           <div class="col-3">${cartItem[i].price}</div>
+                       </div>
+       
+        `;
+    }
+    totalAmount.innerText = total;
 
-        function loadService() {
-            const service = services[currentService];
+    currentItem++;
+});
 
-            document.getElementById("serviceName").textContent = service.name;
-            document.getElementById("servicePrice").textContent =
-                "₹" + service.price.toFixed(2);
+function showCurrentItem(currentItem) {
+    image.src = serviceList[currentItem].image;
+    name.innerText = serviceList[currentItem].name;
+    price.innerText = serviceList[currentItem].price;
+}
+onLoad();
+function onLoad() {
+       if(!cartItem.length){
+       rows.innerHTML += `
+    <div style="height:100%; width:100%; text-align:center;">
+        No Item in Cart
+    </div>
+`;
+    }   
+    showCurrentItem(currentItem);
+}
 
-            document.getElementById("serviceDescription").textContent =
-                service.description;
-
-            document.getElementById("serviceImage").src = service.image;
-
-           
-        }
-
-        function skipService() {
-            currentService++;
-
-            if (currentService >= services.length) {
-                currentService = 0;
-            }
-
-            loadService();
-        }
-
-        function addItem() {
-            cart.push(services[currentService]);
-
-            updateCart();
-
-            currentService++;
-
-            if (currentService >= services.length) {
-                currentService = 0;
-            }
-
-            loadService();
-        }
-
-        function updateCart() {
-            const cartItems = document.getElementById("cartItems");
-
-            cartItems.innerHTML = "";
-
-            let total = 0;
-
-            if (cart.length === 0) {
-                cartItems.innerHTML = `
-                    <tr>
-                        <td colspan="3" class="empty-message">
-                            No items added
-                        </td>
-                    </tr>
-                `;
-            }
-
-            cart.forEach((item, index) => {
-                total += item.price;
-
-                const row = document.createElement("tr");
-
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${item.name}</td>
-                    <td>₹${item.price.toFixed(2)}</td>
-                `;
-
-                cartItems.appendChild(row);
-            });
-
-            document.getElementById("totalAmount").textContent =
-                "₹" + total.toFixed(2);
-        }
-
-        function removeItem(index) {
-            cart.splice(index, 1);
-            updateCart();
-        }
-
-        document.getElementById("bookingForm").addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            if (cart.length === 0) {
-                alert("Please add at least one service.");
-                return;
-            }
-
-            const name = document.getElementById("fullName").value;
-
-            document.getElementById("thankYouMessage").textContent =
-                "Thank you " + name + " for contacting us!";
-
-            document.getElementById("thankYouMessage").style.display = "block";
-
-            this.reset();
-        });
-        function logout() {
-            alert("You have been logged out.");
-        }
-
-        loadService();
-        updateCart();
+bookNow.addEventListener("click", () => {
+    if(name.value == "" || email.value == "" || password.value == ""){
+        alert("Please fill all the fields");
+        return;
+    }
+    bookNowFooter.innerText = "Thank you for contacting us. we will get back to you soon.";
+   
+})
