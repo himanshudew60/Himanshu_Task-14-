@@ -1,99 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <title>Service Booking Web App</title>
+    <title>Laundry Service</title>
 </head>
+
 <body>
-    <div class="header">
-        <h2>Logo</h2>
+
+    <nav class="navbar">
+
+        <img class="logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-dX-6S66Sh2pKAeVKngiz80RsKi5F1dFZA9KSu_UUBA&s=10"
+            alt="logo">
+
         <ul>
-            <li>Home</li>
-            <li>Services</li>
-            <li>Contact Us</li>
-            <li>About Us</li>
+            <li><a class="nav-link" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#booking">Services</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-        <div class="btn">
-            <span>Username</span>
-            <button><i class="fa-solid fa-right-from-bracket"></i></button>
+
+        <button class="username">Username</button>
+
+        <div class="menu">
+            <button class="links-btn">☰</button>
+
+            <div class="side-panel">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#booking">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
+
+    </nav>
+
+    <div id="home" class="hero">
+
+        <div class="leftbox">
+
+            <h1 class="heading1">Revitalize Your <br> Clothes With Expert</h1>
+
+            <h1 class="heading2">Laundry Services!</h1>
+
+            <p class="para">
+                Get your clothes cleaned, washed and ironed by our
+                professional laundry service. We provide fast and
+                reliable laundry services at affordable prices.
+            </p>
+
+            <a class="button" id="book-service" href="#booking">
+            Book a Service today!
+        </a>
+
+        </div>
+
+        <div class="rightbox">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWsDyENJIT-eWYLn8_XCNE2zl2X85tyZIFIxz-ion6A&s=10"
+                alt="Laundry Service">
+
+        </div>
+
     </div>
-    <div class="container">
+
+    <div class="service-overview">
+
+        <div class="overview-heading">
+            <h2>Our Achievements</h2>
+        </div>
+
+        <div class="overview-item">
+            <h2>15+</h2>
+            <p>Laundry Services</p>
+        </div>
+
+        <div class="overview-item">
+            <h2>240+</h2>
+            <p>Happy Customers</p>
+        </div>
+
+        <div class="overview-item">
+            <h2>2+ Yrs</h2>
+            <p>Experience</p>
+        </div>
+
+    </div>
+
+    <div id="booking" class="booking-section">
+
+        <div class="right-box">
+
+            <div class="r-head">
+                <h3>Our Services</h3>
+                <p>Click on the Add Item button to add services to your cart</p>
+            </div>
+
+            <hr>
+
+            <div id="r-body" class="r-body"></div>
+
+            <hr>
+
+            <div class="r-footer">
+                <p>
+                    <i class="fa-solid fa-circle-info"></i>
+                    Add the items to the cart and book now
+                </p>
+            </div>
+
+        </div>
+
         <div class="left-box">
+
             <div class="add-item">
+
                 <div class="add-item-head">
-                    <h3>Add Item</h3>
+                    <h3>Your Cart</h3>
+                </div>
+
+                <div class="add-item-body">
+
+                    <div class="list-head">
+                        <div>S.No</div>
+                        <div>Service Name</div>
+                        <div>Price</div>
+                    </div>
+
+                    <div id="rows" class="list-body"></div>
 
                 </div>
-                <div class="add-item-body">
-                    <div class="list-head">
-                        
-                            <div>S.No</div>
-                            <div>Service Name</div>
-                       
-                        <div class="col-2">Price</div>
-                    </div>
-                    <div id="rows" class="list-body">
-                       
-                    </div>
-                </div>
+
                 <div class="add-item-footer">
-                    <span class="total-amount-label">Total Amount</span>
-                    <span class="total-amount"><i class="fa-solid fa-indian-rupee-sign"></i><span id="total-amount">00</span></span>
+                    <span>Total Amount</span>
+
+                    <span>
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        <span id="total-amount">00</span>
+                    </span>
                 </div>
+
             </div>
+
             <div class="book-now">
+
                 <div class="book-now-head">
-                    <h4>Book Now</h4>
+                    <h3>Book Now</h3>
                 </div>
+
                 <div class="book-now-body">
+
                     <div class="name-field">
-                        <label for="">Full Name</label>
-                        <input id="name" type="text" >
+                        <label>Full Name</label>
+                        <input id="name" type="text">
                     </div>
+
                     <div class="email-password">
+
                         <div class="email">
-                            <label for="" >Email ID</label>
+                            <label>Email ID</label>
                             <input id="email" type="text">
                         </div>
-                        <div  class="password">
-                            <label for="">Password</label>
-                            <input id="password" type="text">
+
+                        <div class="password">
+                            <label>Password</label>
+                            <input id="password" type="password">
                         </div>
+
                     </div>
-                    <button class="book-now-btn" id="book-now">Book Now</button>
-                    <div id="book-now-footer">
-                       
-                    </div>
+
+                    <button class="book-now-btn" id="book-now">
+                        Book Now
+                    </button>
+
+                    <div id="book-now-footer"></div>
+
                 </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="about" class="bottom-section">
+       <div>
+            <i class="fa-solid fa-hand-sparkles"></i>
+            <h5>Premium Services</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, totam? Corrupti, vitae?</p>
+       </div>
+       <div>
+            <i class="fa-solid fa-headset"></i>
+            <h5>Quick Support</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, totam? Corrupti, vitae?</p>
+       </div>
+       <div>
+            <i class="fa-solid fa-truck"></i>
+            <h5>Hassle Free Delivery</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, totam? Corrupti, vitae?</p>
+       </div>
+       <div>
+            <i class="fa-regular fa-handshake"></i>
+            <h5>Affordable Prices</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, totam? Corrupti, vitae?</p>
+       </div>
+       
+    </div>
+
+    <div id="contact" class="subscribe-section">
+        <div class="heading"><h1>Subscribe to our newsletter.</h1></div>
+        <div class="input-form">
+            <input class="inputs name" type="text" placeholder="Full Name">
+            <input class="inputs email" type="email" placeholder="Email">
+            <button class="subs-button">Subscribe</button>
+        </div>
+    </div>
+    <div id="contact" class="footer-section">
+        <div class="box-a">
+            <h2>Logo</h2>
+            <div>
+                <p class="small-heading">About us</p>
+                <p class="box-apara">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
             </div>
         </div>
-        <div class="right-box">
-            <div class="r-box-head">
-                <h3>Browse Our Services</h3>
-                <p>Click on the add to cart button to add the service to your cart or press the skip</p>
-            </div>
-            <hr>
-            <div class="r-box-body">
-                <img id="service-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSal0IbnRyf02gfzQuq9S6zZpJJY2rJlZQxIVacHdHt6Q&s=10" alt="">
-                <div class="name-price">
-                    <span class="service-name" id="service-name">Dry Cleaning</span>
-                    <span class="service-price"><i class="fa-solid fa-indian-rupee-sign"></i><span id="service-price">200</span></span>
-                </div>
-                <div class="skip-add-btn">
-                    <button class="skip-btn" id="skip-btn">Skip <i class="fa-solid fa-circle-minus"></i></button>
-                    <button class="add-btn" id="add-btn">Add to Cart <i class="fa-solid fa-circle-plus"></i></button>
-                </div>
-            </div>
-            <hr>
-            <div class="r-box-footer">
-                <i class="fa-solid fa-circle-info"></i>add the items to the cart and book now
+        <div class="box-b">
+            <p class="small-heading">Important Links</p>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+        </div>
+        <div class="box-c">
+            <p class="small-heading">Contact</p>
+            <p>mail@site.com</p>
+            <p>+91 9123456780</p>
+        </div>
+        <div class="box-d">
+            <p class="small-heading">Follow Us</p>
+            <div class="social">
+                <i class="fa-brands fa-instagram"></i><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-youtube"></i>
             </div>
         </div>
     </div>
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
